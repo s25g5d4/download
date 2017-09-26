@@ -3,6 +3,7 @@
   "version": "6.2.5",
   "description": "Download and extract files",
   "license": "MIT",
+  "typings": "./index.d.ts",
   "repository": "kevva/download",
   "author": {
     "email": "kevinmartensson@gmail.com",
@@ -26,6 +27,7 @@
     "url"
   ],
   "dependencies": {
+    "@types/got": "^7.1.4",
     "caw": "^2.0.0",
     "content-disposition": "^0.5.2",
     "decompress": "^4.0.0",
