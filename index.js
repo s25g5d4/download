@@ -84,17 +84,26 @@ module.exports = (uri, output, opts) => {
 		// TODO: Use destructuring when targeting Node.js 6
 		const data = result[0];
 		const res = result[1];
+		const filename = opts.filename || filenamify(getFilename(res, data));
+
+		data.filename = filename;
+		data.requestUrl = res.requestUrl;
+		data.redirectUrls = res.redirectUrls;
+		data.headers = res.headers;
+		data.statusCode = res.statusCode;
+		data.res = res;
 
 		if (!output) {
 			return opts.extract ? decompress(data, opts) : data;
 		}
 
-		const filename = opts.filename || filenamify(getFilename(res, data));
 		const outputFilepath = path.join(output, filename);
 
 		if (opts.extract) {
 			return decompress(data, path.dirname(outputFilepath), opts);
 		}
+
+		data.path = outputFilepath;
 
 		return makeDir(path.dirname(outputFilepath))
 			.then(() => fsP.writeFile(outputFilepath, data))

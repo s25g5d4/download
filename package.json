@@ -1,14 +1,14 @@
 {
   "name": "download",
-  "version": "6.2.5",
+  "version": "7.0.0",
   "description": "Download and extract files",
   "license": "MIT",
   "typings": "./index.d.ts",
-  "repository": "kevva/download",
+  "repository": "s25g5d4/download",
   "author": {
-    "email": "kevinmartensson@gmail.com",
-    "name": "Kevin Mårtensson",
-    "url": "github.com/kevva"
+    "email": "s25g5d4@gmail.com",
+    "name": "Z.J. Wu",
+    "url": "https://github.com/s25g5d4"
   },
   "engines": {
     "node": ">=4"
