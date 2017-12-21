@@ -37,7 +37,7 @@ const getFilename = (res, data) => {
 	const header = res.headers['content-disposition'];
 
 	if (header) {
-		const parsed = contentDisposition.parse(header);
+		const parsed = contentDisposition.parse(header.replace(/filename\*=UTF8/i, 'filename*=UTF-8'));
 
 		if (parsed.parameters && parsed.parameters.filename) {
 			return parsed.parameters.filename;
