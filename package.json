@@ -1,6 +1,6 @@
 {
   "name": "download",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "Download and extract files",
   "license": "MIT",
   "typings": "./index.d.ts",
